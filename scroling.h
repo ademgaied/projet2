@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <SDL/SDL.h>
+#include <SDL/SDL_image.h>
+#include <SDL/SDL_mixer.h>
+#include <SDL/SDL_ttf.h>
+#include <SDL/SDL_ttf.h>
+typedef struct map
+{
+	SDL_Surface *image;
+	SDL_Rect camera;
+	SDL_Rect position;
+        int speed_camera;
+        int d;
+        
+
+}map;
+map Initialiser(map maps);
+void scroling(map *m,int s,SDL_Rect p,map* map2,SDL_Surface *imag,int d,SDL_Rect positionps2);
+

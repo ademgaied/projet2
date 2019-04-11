@@ -1,0 +1,84 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <SDL/SDL.h>
+#include <SDL/SDL_image.h>
+#include <SDL/SDL_mixer.h>
+#include <SDL/SDL_ttf.h>
+#include "scroling.h"
+typedef struct map
+{
+	SDL_Surface *image;
+	SDL_Rect camera;
+	SDL_Rect position;
+        int speed_camera;
+        int d;
+        
+
+}map;
+
+
+
+
+map Initialiser(map maps)
+{ 
+maps->image=IMG_Load("adem.jpg");
+maps.speed_camera=10;
+maps.camera.x=0;
+maps.camera.y=0;
+maps.camera.h=1000;
+maps.camera.w=1000;
+	return maps;
+}
+
+void scroling(map *m,int s,SDL_Rect p,map* map2,SDL_Surface *imag,int d,SDL_Rect positionps2)
+{
+if (s==4)
+{
+
+m->camera.x-=m->speed_camera;
+m->camera.y-=m->speed_camera;
+
+
+	                
+
+}
+if (s==3)
+{
+
+m->camera.x+=m->speed_camera;
+m->camera.y+=m->speed_camera;
+
+
+
+      
+}
+if (s==2)
+{
+
+m->camera.y+=m->speed_camera;
+m->camera.x-=m->speed_camera;
+
+
+
+	
+	
+}
+if (s==1)
+{
+
+m->camera.y-=m->speed_camera;
+m->camera.x+=m->speed_camera;
+
+	
+}
+if(p.x>=720)
+{
+ p.x+=50;
+ //p.y-=0;
+m->camera.x+=20;
+//m->camera.y-=100;
+
+}
+
+}
+
